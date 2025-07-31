@@ -8,28 +8,25 @@ export default function Cursor() {
     return () => setBorder("border-red-500");
   }, []);
 
-  const [pos, setPos] = useState({
-    x: 0,
-    y: 0,
-  });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setPos({
-        x: event.clientX,
-        y: event.clientY,
-      });
+    const updateMousePosition = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", updateMousePosition);
 
+    // Cleanup function to remove the event listener when the component unmounts
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousemove", updateMousePosition);
     };
   }, []);
 
   return (
     <div
-      className={`${border} z-[0] top-0 left-0 bg-gray-900 absolute m-5 w-20 h-20 rounded-full border transition`}
+      style={{ left: mousePosition.x, top: mousePosition.y }}
+      className={`${border} z-[0]  bg-gray-900 absolute  w-20 h-20 rounded-full border transition pointer-events-none -translate-x-1/2 -translate-y-1/2`}
     ></div>
   );
 }
