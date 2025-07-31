@@ -13,23 +13,24 @@ export default function Cursor() {
     y: 0,
   });
   useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (e) => {
       setPos({
-        x: event.clientX,
-        y: event.clientY,
+        x: e.clientX,
+        y: e.clientY,
       });
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
     <div
-      className={`${border} z-[0] top-0 left-0 bg-gray-900 absolute m-5 w-20 h-20 rounded-full border transition`}
+      style={{ transform: `translate(${pos.x}px, ${pos.y}px` }}
+      className={`${border} z-[0] -top-10 -left-10 bg-gray-900 absolute w-20 h-20 rounded-full border transition-[border] duration-200 pointer-events-none`}
     ></div>
   );
 }
