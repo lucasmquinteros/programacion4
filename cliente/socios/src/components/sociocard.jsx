@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 
 const SocioCard = ({ socio }) => {
-  const [estado, setEstado] = useState(socio.estado && true);
-  useEffect(() => {}, [estado]);
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 m-2 w-full sm:w-80">
+    <div
+      className={`shadow-md rounded-lg p-4 m-2 w-full sm:w-80 ${
+        socio.estado === "ACT" ? "bg-white" : "bg-gray-400"
+      }`}
+    >
       <h2 className="text-xl font-semibold text-gray-800">
-        {socio.nombre} {socio.apellido}
+        <a href="/Socios/:id">
+          {socio.nombre} {socio.apellido}
+        </a>
       </h2>
       <p className="text-sm text-gray-600">
         Plan: <span className="font-medium">{socio.plan}</span>

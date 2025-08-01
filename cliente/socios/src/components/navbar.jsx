@@ -7,7 +7,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
+    <nav className="bg-white shadow-md static w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -15,11 +15,11 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
-            <a href="#" className="hover:text-indigo-600">
+            <a href="/" className="hover:text-indigo-600">
               Inicio
             </a>
-            <a href="#" className="hover:text-indigo-600">
-              Servicios
+            <a href="/socios" className="hover:text-indigo-600">
+              Socios
             </a>
             <a href="#" className="hover:text-indigo-600">
               Nosotros

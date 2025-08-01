@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 export default function home() {
   return (
     <main>
-      <Navbar />
+      <h1 className="">Holam undo</h1>
     </main>
   );
 }
