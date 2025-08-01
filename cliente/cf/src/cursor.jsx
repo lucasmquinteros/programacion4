@@ -15,18 +15,17 @@ export default function Cursor() {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
+    document.addEventListener("mousemove", updateMousePosition);
 
-    // Cleanup function to remove the event listener when the component unmounts
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
+      document.removeEventListener("mousemove", updateMousePosition);
     };
   }, []);
 
   return (
     <div
       style={{ left: mousePosition.x, top: mousePosition.y }}
-      className={`${border} z-[0]  bg-gray-900 absolute  w-20 h-20 rounded-full border transition pointer-events-none -translate-x-1/2 -translate-y-1/2`}
+      className={`${border} z-[0]  bg-pink-900 absolute  w-20 h-20 rounded-full border transition pointer-events-none -translate-x-1/2 -translate-y-1/2`}
     ></div>
   );
 }
