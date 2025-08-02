@@ -1,19 +1,10 @@
 import { Link } from "wouter";
 
-export const Card = ({
-  id,
-  apellido,
-  nombre,
-  edad,
-  sexo,
-  peso,
-  altura,
-  estado,
-}) => {
+export const Card = ({ id, apellido, nombre, edad, sexo, estado }) => {
   return (
     <article>
       <Link
-        href={`/partner/${id}`}
+        href={`/partners/${id}`}
         className={`block max-w-sm p-6 ${
           estado === "ACT" ? "bg-white" : "bg-red-300"
         } border border-gray-200 rounded-lg shadow-sm ${
@@ -29,9 +20,7 @@ export const Card = ({
         <p className="font-normal text-gray-700 dark:text-gray-400">
           Sexo: {sexo}
         </p>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          IMC: {(peso / (altura * altura)).toFixed(2)}
-        </p>
+
         <span class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Más Detalles
           <svg
