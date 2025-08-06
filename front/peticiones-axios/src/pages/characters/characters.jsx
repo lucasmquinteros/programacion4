@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  getAllCharacters,
-  getOneCharacterByName,
-} from "../../services/dragon-ball-api";
+import { getAllCharacters } from "../../services/dragon-ball-api";
 import CardCharacter from "../../components/characters/card-character";
 
 export const Characters = () => {
@@ -11,8 +8,8 @@ export const Characters = () => {
     getAllCharacters().then((data) => setChars(data?.items));
   }, []);
   return (
-    <main className=" bg-gray-950 text-white p-10">
-      <section className="flex flex-wrap justify-center items-center gap-4 w-full mx-auto">
+    <main className=" bg-gray-950 text-white p-10 h-full">
+      <section className="flex flex-wrap justify-center items-center gap-4 w-full mx-auto h-full">
         {chars.map((ch) => (
           <CardCharacter key={ch.id} {...ch} />
         ))}

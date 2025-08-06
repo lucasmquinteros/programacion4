@@ -3,7 +3,7 @@ import { Link } from "wouter";
 export default function CardCharacter({ id, image, name, ki, description }) {
   return (
     <Link
-      href={`/${id}`}
+      href={`/characters/${id}`}
       className="bg-gray-950 card bg-base-100 w-96 shadow-sm border-2 border-transparent transition hover:border-white "
     >
       <figure className="flex flex-col">

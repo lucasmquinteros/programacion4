@@ -1,11 +1,17 @@
 import { useParams } from "wouter";
-import { Characters } from "./characters";
-import { useEffect } from "react";
-
-useEffect(() => {}, []);
+import { useEffect, useState } from "react";
+import { getOneCharacterById } from "@/services/dragon-ball-api";
 
 export default function DetailCharacter() {
   const { id } = useParams();
+
+  const [char, setChar] = useState({});
+  useEffect(() => {
+    getOneCharacterById(id).then((d) => setChar(d));
+  }, [id]);
+
+  console.log(char);
+
   return (
     <main className=" bg-gray-950 text-white h-screen">
       <section className="hero min-h-screen">
