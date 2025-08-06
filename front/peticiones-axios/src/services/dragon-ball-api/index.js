@@ -10,3 +10,5 @@ export {
   getOneCharacterById,
   getOneCharacterByName,
 } from "./characters";
+
+export { getAllPlanets, getOnePlanetById } from "./planets";

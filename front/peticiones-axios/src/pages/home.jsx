@@ -1,16 +1,22 @@
 export default function Home() {
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-          <h1 className="text-5xl font-bold">Hello there</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+    <main className=" bg-gray-900 text-white p-10 ">
+      <div className="hero  min-h-screen">
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="text-5xl font-bold">
+              Bienvenido a la API de Dragon Ball
+            </h1>
+            <p className="py-6">
+              En esta página se muestran todos los datos de la API de Dragon
+              Ball, para mas información ir a{" "}
+              <a href="https://web.dragonball-api.com/">
+                https://web.dragonball-api.com/
+              </a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

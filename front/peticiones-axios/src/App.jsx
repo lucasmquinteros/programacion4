@@ -4,6 +4,8 @@ import { Page404 } from "./pages/page404";
 import DetailCharacter from "./pages/characters/detail-character";
 import Home from "./pages/home";
 import NavBar from "./components/nav-bar";
+import Planets from "./pages/planets/planets";
+import DetailPlanet from "./pages/planets/detail-planet";
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
         </Route>
         <Route path={"/characters/:id"}>
           <DetailCharacter />
+        </Route>
+        <Route path={"/planets"}>
+          <Planets />
+        </Route>
+        <Route path={"/planets/:id"}>
+          <DetailPlanet />
         </Route>
 
         <Route>

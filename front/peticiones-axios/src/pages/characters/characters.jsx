@@ -8,7 +8,7 @@ export const Characters = () => {
     getAllCharacters().then((data) => setChars(data?.items));
   }, []);
   return (
-    <main className=" bg-gray-950 text-white p-10 h-full">
+    <main className=" bg-gray-900 text-white p-10">
       <section className="flex flex-wrap justify-center items-center gap-4 w-full mx-auto h-full">
         {chars.map((ch) => (
           <CardCharacter key={ch.id} {...ch} />
