@@ -13,7 +13,7 @@ export default function CardPlanets({
       className="bg-gray-950 card bg-base-100 w-96 shadow-sm border-2 border-transparent transition hover:border-white "
     >
       <figure className="flex flex-col">
-        <img src={image} alt={`imagen de ${name}`} className=" h-80 " />
+        <img src={image} alt={`imagen del planeta ${name}`} className="object-cover h-80 w-full " />
         <figcaption>{isDestroyed ? "Destruido" : "No destruido"}</figcaption>
       </figure>
       <div className="card-body">

@@ -5,10 +5,6 @@ export const instanceDBS = axios.create({
   timeout: 1000,
 });
 
-export {
-  getAllCharacters,
-  getOneCharacterById,
-  getOneCharacterByName,
-} from "./characters";
+export *from "./characters";
 
-export { getAllPlanets, getOnePlanetById } from "./planets";
+export * from "./planets";
