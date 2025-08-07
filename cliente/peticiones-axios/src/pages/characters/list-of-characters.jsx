@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 export default function ListOfCharacters() {
   const [chars, setChars] = useState([]);
   useEffect(() => {
-    getAllCharacters().then((items) => setChars(items));
+    getAllCharacters().then((items) => {
+      setChars(items);
+    });
   }, []);
   return (
     <main className="flex flex-wrap gap-5 justify-center w-full p-8 ">

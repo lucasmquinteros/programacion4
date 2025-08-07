@@ -2,6 +2,7 @@ import { Route, Switch } from "wouter";
 import ListOfCharacters from "./pages/characters/list-of-characters";
 import Home from "./pages/home";
 import NavBar from "./components/navbar";
+import CharacterDetail from "./pages/characters/character-detail";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <ListOfCharacters />
         </Route>
         <Route path="/characters/:id">
-          <ListOfCharacters />
+          <CharacterDetail />
         </Route>
       </Switch>
     </>

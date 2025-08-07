@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-export default function CardCharacter({ image, name, ki, description }) {
+export default function CardCharacter({ id, image, name, ki, description }) {
   return (
     <section className="card bg-base-100 w-96 shadow-sm border-2 border-transparent transition hover:border-black">
       <div className="card-body">

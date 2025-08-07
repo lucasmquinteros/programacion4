@@ -1,20 +1,28 @@
+import { useEffect, useState } from "react";
+import { useParams } from "wouter";
+import { getOneCharacterById } from "../../services/dragon-ball-api/charactes";
 export default function CharacterDetail() {
+  const { id } = useParams();
+  const [char, setChar] = useState({});
+
+  useEffect(() => {
+    getOneCharacterById(id).then((d) => {
+      setChar(d);
+    });
+  }, [id]);
   return (
     <main>
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
           <img
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-            className="max-w-sm rounded-lg shadow-2xl"
+            src={char.image}
+            className="max-w-sm rounded-lg shadow-2xl h-80"
           />
           <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <h1 className="text-5xl font-bold">{char.name}!</h1>
+            <p className="py-6 max-h-60 overflow-y-scroll">
+              {char.description}
             </p>
-            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>
