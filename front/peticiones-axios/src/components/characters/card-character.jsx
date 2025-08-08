@@ -4,7 +4,7 @@ export default function CardCharacter({ id, image, name, ki, description }) {
   return (
     <Link
       href={`/characters/${id}`}
-      className="bg-gray-950 card bg-base-100 w-96 shadow-sm border-2 border-transparent transition hover:border-white "
+      className="bg-gray-950 card w-96 shadow-sm border-2 border-transparent transition ease duration-2 00 hover:border-white "
     >
       <figure className="flex flex-col">
         <img src={image} alt={`imagen de ${name}`} className=" h-80 " />

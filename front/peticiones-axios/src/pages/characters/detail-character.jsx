@@ -2,6 +2,7 @@ import { useParams } from "wouter";
 import { useEffect, useState } from "react";
 import { getOneCharacterById } from "@/services/dragon-ball-api";
 import CardTransformation from "@/components/characters/card-transformation";
+import CardPlanets from "@/components/planets/card-planets";
 
 export default function DetailCharacter() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ export default function DetailCharacter() {
 
   return (
     <main className=" bg-gray-900 text-white p-10 ">
-      <section className="hero min-h-screen">
+      <section className="hero min-h-[85vh]">
         <div className="hero-content flex-col lg:flex-row">
           <img src={char.image} className="h-[600px] rounded-lg shadow-2xl" />
           <div>
@@ -23,6 +24,10 @@ export default function DetailCharacter() {
             <p className="py-6">{char.description}</p>
           </div>
         </div>
+      </section>
+      <h2 className="text-4xl text-center">Planeta de origen:</h2>
+      <section className="hero min-h-[60vh]">
+        <CardPlanets {...char.originPlanet} />
       </section>
       {char.transformations?.length === 0 ? (
         <h2 className="text-4xl text-center mb-5">
