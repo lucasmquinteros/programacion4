@@ -12,10 +12,13 @@ export default function DetailPlanet() {
   }, [id]);
 
   return (
-    <main className=" bg-gray-900 text-white p-10 min-h-full ">
+    <main className=" bg-gray-900 text-white p-10 min-h-screen ">
       <section className="hero min-h-[70vh]">
         <div className="hero-content flex-col lg:flex-row">
-          <img src={planet.image} className="max-w-sm rounded-lg shadow-2xl" />
+          <img
+            src={planet.image}
+            className="max-w-sm rounded-lg shadow-2xl min-h-80 aspect-video object-cover"
+          />
           <div>
             <h1 className="text-5xl font-bold">{planet.name}</h1>
             <p className="py-6">

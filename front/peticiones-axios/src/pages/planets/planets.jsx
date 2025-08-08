@@ -10,7 +10,7 @@ export default function Planets() {
 
   return (
     <main className=" bg-gray-900 text-white p-10 ">
-      <section className="flex flex-wrap justify-center items-center gap-4 w-full mx-auto h-full">
+      <section className="flex flex-wrap justify-center items-center gap-8 w-full mx-auto h-full mb-20">
         {planets.map((pl) => (
           <CardPlanets key={pl.id} {...pl} />
         ))}

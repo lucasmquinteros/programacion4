@@ -10,17 +10,21 @@ export default function CardPlanets({
   return (
     <Link
       href={`/planets/${id}`}
-      className="bg-gray-950 card bg-base-100 w-96 shadow-sm border-2 border-transparent transition hover:border-white "
+      className="w-96 min-h-96 rounded-2xl image-full shadow-sm group hover:card"
     >
-      <figure className="flex flex-col">
-        <img src={image} alt={`imagen del planeta ${name}`} className="object-cover h-80 w-full " />
-        <figcaption>{isDestroyed ? "Destruido" : "No destruido"}</figcaption>
+      <figure>
+        <img
+          src={image}
+          alt={`imagen del planeta ${name}`}
+          className="w-full min-h-96 rounded-2xl object-cover"
+        />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p className=" h-30 overflow-y-scroll ">{description}</p>
-        <div className="card-actions justify-center">
-          <button className="btn btn-primary">Más detalles</button>
+      <div className="card-body p-8 hidden group-hover:block animacion ">
+        <h2 className="card-title text-2xl">{name}</h2>
+        <figcaption>{isDestroyed ? "Destruido" : "No destruido"}</figcaption>
+        <p>{description}</p>
+        <div className="card-actions justify-end mt-4">
+          <button className="btn btn-primary">Mas detalles</button>
         </div>
       </div>
     </Link>
