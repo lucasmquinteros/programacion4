@@ -3,7 +3,7 @@ import NavBar from "./components/nav-bar";
 import { lazy, Suspense } from "react";
 import Spinner from "./components/spinner";
 
-// puedo importar un lazy se puede hacer si un componenete esta importado de manera default o no (manera simple)
+// puedo importar un lazy se puede hacer si un componenete esta importado de manera default (manera simple)
 // se puede importar si es nombrado pero con un parametro default:
 const HomePage = lazy(() => import("./pages/home"));
 const Page404Page = lazy(() => import("./pages/page404"));

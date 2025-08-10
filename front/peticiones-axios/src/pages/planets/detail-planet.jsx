@@ -3,6 +3,7 @@ import { getOnePlanetById } from "@/services/dragon-ball-api";
 import CardCharacter from "@/components/characters/card-character";
 import { useReq } from "@/hooks/use-req";
 import Spinner from "@/components/spinner";
+import History from "@/components/history";
 
 export default function DetailPlanet() {
   const { id } = useParams();
@@ -15,6 +16,7 @@ export default function DetailPlanet() {
 
   return (
     <main className=" bg-gray-900 text-white p-10 min-h-screen ">
+      <History />
       <section className="hero min-h-[70vh]">
         <div className="hero-content flex-col lg:flex-row">
           <img
@@ -32,15 +34,15 @@ export default function DetailPlanet() {
       </section>
       {planet?.characters?.length === 0 ? (
         <h2 className="text-4xl text-center mb-5">
-          No hay personajes que vivan en este planet?a
+          No hay personajes que vivan en este planeta
         </h2>
       ) : (
         <h2 className="text-4xl text-center mb-5">
-          Personajes que viven en este planet?a:
+          Personajes que viven en este planeta:
         </h2>
       )}
 
-      <section className="flex flex-wrap justify-center items-center gap-4 w-full mx-auto h-full p-5">
+      <section className="flex flex-wrap justify-center items-center gap-6 w-full mx-auto h-full p-5">
         {planet?.characters?.map((ch) => (
           <CardCharacter key={ch.id} {...ch} />
         ))}

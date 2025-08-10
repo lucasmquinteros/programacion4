@@ -4,6 +4,7 @@ import CardTransformation from "@/components/characters/card-transformation";
 import CardPlanets from "@/components/planets/card-planets";
 import Spinner from "@/components/spinner";
 import { useReq } from "@/hooks/use-req";
+import History from "@/components/history";
 
 export default function DetailCharacter() {
   const { id } = useParams();
@@ -16,6 +17,7 @@ export default function DetailCharacter() {
 
   return (
     <main className=" bg-gray-900 text-white p-10 ">
+      <History />
       <section className="hero min-h-[85vh]">
         <div className="hero-content flex-col lg:flex-row">
           <img src={char?.image} className="h-[600px] rounded-lg shadow-2xl" />
