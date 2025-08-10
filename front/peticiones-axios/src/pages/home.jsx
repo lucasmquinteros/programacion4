@@ -1,6 +1,9 @@
+import History from "@/components/history";
+
 export default function Home() {
   return (
     <main className=" bg-gray-900 text-white p-10 ">
+      <History />
       <div className="hero  min-h-screen">
         <div className="hero-content text-center">
           <div className="max-w-md">
