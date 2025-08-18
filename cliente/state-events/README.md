@@ -1,0 +1,1 @@
+//Prop drilling -> ocurre cuando se quiere pasar datos a través de varios componentes intermedios que no los necesitan directamente, es decir solo para que lleguen a un componente más profundo que sí los usa
